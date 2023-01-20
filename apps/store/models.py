@@ -3,6 +3,8 @@ from apps.common.models import TimeStampUUIDModel
 
 class Store(TimeStampUUIDModel):
     name = models.CharField(max_length=128, blank=False, null=False)
+    rating = models.PositiveIntegerField(default=1)
+    image = models.TextField()
 
     def __str__(self):
         return f"{self.name}"
@@ -14,6 +16,7 @@ class StoreProduct(TimeStampUUIDModel):
     quantity = models.PositiveIntegerField(default=0)
     temperature = models.IntegerField(default=0)
     humidity = models.DecimalField(max_digits=5, decimal_places=2)
+    image = models.TextField();
 
     def __str__(self):
         return f"{self.name}"
